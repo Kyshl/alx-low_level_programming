@@ -1,12 +1,15 @@
 #include <stdio.h>
+
 /**
- * you should produce the exact same output as in the example
+ * You should produce the exact same output as in the example
  * Warnings are allowed
+ * Description: using the main function
  *
  * Your program should return 0
  */
 int main(void)
 {
+
 	char c;
 	int i;
 	long li;
@@ -18,5 +21,6 @@ int main(void)
 	printf("size of a long: %1d byte(s)\n", sizeof(li));
 	printf("size of a long long: %1d byte(s)\n", sizeof(lli));
 	printf("size of a float: %1d byte(s)\n", sizeof(f));
+
 	return (0);
 }
