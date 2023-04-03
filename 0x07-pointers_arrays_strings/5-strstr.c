@@ -3,22 +3,22 @@
  * _strstr - Entry point
  * @haystack: input
  * @needle: input
- * Return: Always 0 (Success)
+ * Return: 0 (Success)
  */
 char *_strstr(char *haystack, char *needle)
 {
 	for (; *haystack != '\0'; haystack++)
 	{
-		char *l = haystack;
-		char *p = needle;
+		char *m = haystack;
+		char *j = needle;
 
-		while (*l == *p && *p != '\0')
+		while (*m == *j && *j != '\0')
 		{
-			l++;
-			p++;
+			m++;
+			j++;
 		}
 
-		if (*p == '\0')
+		if (*j == '\0')
 			return (haystack);
 	}
 
