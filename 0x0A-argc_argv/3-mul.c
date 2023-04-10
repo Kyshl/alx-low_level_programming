@@ -9,11 +9,11 @@
  */
 int _atoi(char *s)
 {
-	int i, j, k, len, l, digit;
+	int i, d, n, len, l, digit;
 
 	i = 0;
-	j = 0;
-	k = 0;
+	d = 0;
+	n = 0;
 	len = 0;
 	l = 0;
 	digit = 0;
@@ -31,7 +31,7 @@ int _atoi(char *s)
 			digit = s[i] - '0';
 			if (d % 2)
 				digit = -digit;
-			k = k * 10 + digit;
+			n = n * 10 + digit;
 			l = 1;
 			if (s[i + 1] < '0' || s[i + 1] > '9')
 				break;
