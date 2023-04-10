@@ -1,9 +1,11 @@
 #include <stdio.h>
-# include "main.h"
+#include "main.h"
+
 /**
- * _atoi -converts  string into an intege
- * @s:string to be converted
- * Return: int converted from string
+ * _atoi - converts a string to an integer
+ * @s: string to be converted
+ *
+ * Return: the int converted from the string
  */
 int _atoi(char *s)
 {
@@ -19,30 +21,30 @@ int _atoi(char *s)
 	while (s[len] != '\0')
 		len++;
 
-	while (i < len && l = = 0)
+	while (i < len && l == 0)
 	{
+		if (s[i] == '-')
+			++d;
 
-	if (s[i] = = '-')
-	++j;
-
-if (s[i] >= '0' && s[i] <= '9')
-{
-
-digit = s[i] - '0';
-if (j % 2)
-	digit = -digit;
-k = k * 10 + digit;
-l = 1
-if (s[i + 1] < '0' || s[i + 1] > '9')
-	break;
-l = 0;
-}
-i++;
-}
-if (l == 0)
-	return (0);
-	return (k);
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			k = k * 10 + digit;
+			l = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			l = 0;
+		}
+		i++;
 	}
+
+	if (l == 0)
+		return (0);
+
+	return (n);
+}
 
 /**
  * main - multiplies two numbers
@@ -69,10 +71,3 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-
-
-
-
-
-
-
