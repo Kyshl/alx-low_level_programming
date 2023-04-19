@@ -7,14 +7,14 @@
  * if not 4 arguments, return Error & exit 98
  * if op is null, return Error & exit 99
  * if div or mod 0, return Error & exit 100
- * run calc, input first, operator, input second = pointer res to get_op
+ * run calc, input one, operator, input two = pointer res to get_op
  * @argc: the arguments
  * @argv: double pointer to arguments
  * Return: 0
  */
 int main(int argc, char *argv[])
 {
-	int first, second, ans;
+	int one, two, ans;
 	int (*res)(int, int);
 	char *get_op;
 
@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	first = atoi(argv[1]);
-	second= atoi(argv[3]);
+	one = atoi(argv[1]);
+	two = atoi(argv[3]);
 	get_op = argv[2];
 
 	if (get_op_func(argv[2]) == NULL || argv[2][1] != '\0')
@@ -41,9 +41,8 @@ int main(int argc, char *argv[])
 	}
 
 	res = get_op_func(get_op);
-	ans = res(first, second);
+	ans = res(one, two);
 
 	printf("%d\n", ans);
 	return (0);
 }
-
