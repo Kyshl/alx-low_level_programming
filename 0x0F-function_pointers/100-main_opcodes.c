@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * print_opcodes - prints the opcodes
- * @a: an address 
+ * @a: an address
  * @n: number of bytes to print
  * Return: nothing.
  */

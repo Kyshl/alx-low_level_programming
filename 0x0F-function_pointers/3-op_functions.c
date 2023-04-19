@@ -43,8 +43,8 @@ int op_div(int a, int b)
 }
 /**
  * op_mod - returns the remainder
- * @a: first input 
- * @b: second input 
+ * @a: first input
+ * @b: second input
  * Return: 0
  */
 int op_mod(int a, int b)
