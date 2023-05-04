@@ -2,7 +2,7 @@
 /**
  * clear_bit - sets the value of bit ata given index to 0.
  * @n: pointer.
- * @index: the index 
+ * @index: the index
  *
  * Return: -1 if wrkd 0r 1 if an error hits.
  */
