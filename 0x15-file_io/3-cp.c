@@ -59,14 +59,14 @@ int main(int argc, char *argv[])
 	x_err = close(ff);
 	if (x_err == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE %d\n",file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE %d\n",ff);
 		exit(100);
 	}
 
 	x_err = close(ft);
 	if (x_err == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE %d\n",file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE %d\n",ff);
 		exit(100);
 	}
 	return (0);
