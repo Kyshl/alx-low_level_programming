@@ -34,15 +34,15 @@ void check_elf(unsigned char *e_ident)
 		    e_ident[x] != 'L' &&
 		    e_ident[x] != 'F')
 		{
-			dprintf(STDERR_FILENO, "Error: Not elf file\n");
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
 		}
 	}
 }
 
 /**
- * print_magic - Print magic
- * @e_ident: pointer
+ * print_magic - Print magic no of an ELF file
+ * @e_ident: pointer to an array with an ELF magic no
  *
  * Description: magic numbers space separated
  */
@@ -88,7 +88,7 @@ void print_class(unsigned char *e_ident)
 }
 
 /**
- * print_data - Print data
+ * print_data - Print data of an ELF header
  * @e_ident: pointer
  */
 void print_data(unsigned char *e_ident)
@@ -112,8 +112,8 @@ void print_data(unsigned char *e_ident)
 }
 
 /**
- * print_version - Print version
- * @e_ident: pointer
+ * print_version - Print version of an ELF header
+ * @e_ident: pointer to an array with an ELF version
  */
 void print_version(unsigned char *e_ident)
 {
@@ -132,8 +132,8 @@ void print_version(unsigned char *e_ident)
 }
 
 /**
- * print_osabi - Print osabi
- * @e_ident: pointer
+ * print_osabi - Print osabi of an ELF header
+ * @e_ident: pointer of an ELF version
  */
 void print_osabi(unsigned char *e_ident)
 {
@@ -187,9 +187,9 @@ void print_abi(unsigned char *e_ident)
 }
 
 /**
- * print_type - Print type
- * @e_type: type.
- * @e_ident: pointer
+ * print_type - Print type of an ELF header
+ * @e_type: ELF type.
+ * @e_ident: pointer containing ELF version
  */
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
@@ -221,8 +221,8 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * print_entry - Prnt en try of an ELF header.
- * @e_entry: The entry
+ * print_entry - Print entry of an ELF header.
+ * @e_entry: The entry of an ELF
  * @e_ident: pointer
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
@@ -259,10 +259,10 @@ void close_elf(int elf)
 	}
 }
 /**
- * main - Displays the information contained in the
+ * main - Displays the information contained in an
  * ELF header at the start of an ELF file.
- * @argc:arguments
- * @argv: An array oof arguments.
+ * @argc:argument number
+ * @argv: An array oof pointer to arguments.
  *
  * Return: Always 0
  *
@@ -295,7 +295,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
-
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
 	print_magic(header->e_ident);
