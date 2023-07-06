@@ -15,9 +15,9 @@ unsigned int binary_to_uint(const char *b)
 
 	for (k = 0; b[k]; k++)
 	{
-		if (b[k] < 48 || b[k] > 49)
+		if (b[k] < '0' || b[k] > '1')
 			return (0);
-		gty = 2 * gty + (b[k] - 48);
+		gty = 2 * gty + (b[k] - '0');
 	}
 	return (gty);
 }
